@@ -1,0 +1,48 @@
+<div class="align-div ">
+<div class="align-to-center">Add Book</div>
+<hr>
+   <div  class="margin-up">
+     <form name='regForm' novalidate>
+
+<span>Book Name : </span><br>
+       <input type="text" name="bookName" placeholder="Enter Book Name" class = "text-color"
+         ng-model="addBooks.book.name"
+         required>
+
+
+         <br>
+         <br>
+Author :<br>
+<input type="text" name="author" placeholder="Enter Author name" class = "text-color"
+  ng-model="addBooks.book.author"
+  required>
+
+
+  <br>
+  <br>
+Book Price :<br>
+       <input type="number" name="price" placeholder="Enter price" class = "text-color"
+         ng-model="addBooks.book.price"
+         required>
+
+         <br>
+         <br>
+
+         <span ng-if="regForm.$invalid">
+           Please enter all the above Information.
+         </span>
+         <br><br>
+         <span style="color:red" ng-if="addBooks.showError">
+           {{addBooks.showError}}
+         </span>
+
+       <button
+         ng-disabled="regForm.$invalid" class = "button-style"
+         ng-click="addBooks.submit()">Submit</button><br>
+         <span ng-if="addBooks.showMessage">
+           Your Information has been saved.
+         </span>
+
+     </form>
+   </div>
+</div>

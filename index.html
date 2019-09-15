@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Books Depository</title>
+  </head>
+  <body  ng-app='BooksApp'>
+    <div class="wrapper">
+    <div id="collapsable-nav" class="collapse navbar-collapse panel">
+      <div>
+      <img src = "css/assets/Bitmap.png">
+      <ul id="nav-list" class="nav navbar-nav navbar-right" style="list-style: none;">
+        <li id="navMenuButton" ui-sref-active="active">
+          <a ui-sref="addBooks">
+            <img src = "css\assets\add books default.png"><span class="glyphicon glyphicon-cutlery"></span> Add Books</a>
+        </li>
+        <li>
+          <a ui-sref="books">
+            <img src = "css\assets\add books default.png"><span class="glyphicon glyphicon-info-sign"></span> Books</a>
+        </li>
+        <li>
+          <a ui-sref="favorites">
+            <img src = "css\assets\add books default.png"><span class="glyphicon glyphicon-certificate"></span> Favorites</a>
+        </li>
+      </ul>
+      </div>
+    <div>
+      <img src = "css/assets/bg left.png" class="panel-bottom hide-img">
+    </div>  <!-- #nav-list -->
+    </div><!-- .collapse .navbar-collapse -->
+    <div class="content">
+    <ui-view></ui-view>
+    </div>
+    </div>
+
+    <!-- Libraries -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+
+    <!-- Modules -->
+    <script src="src/books/booksapp.module.js"></script>
+    <!-- Routes -->
+    <script src="src/routes.js"></script>
+
+    <!-- 'menulist' module artifacts -->
+    <script src="src/common/booksdata.service.js"></script>
+    <script src="src/books/addBooks/addBooks.controller.js"></script>
+    <script src="src/books/booksDisplay/books.controller.js"></script>
+    <script src="src/books/favoritesDisplay/favorites.controller.js"></script>
+  </body>
+</html>

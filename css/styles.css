@@ -1,0 +1,126 @@
+:root{
+  --default-color : #00A6BE;
+}
+body {
+  font-size: 1.2em;
+}
+
+
+
+li[ui-sref]:hover {
+  display: inline-block;
+  cursor: pointer;
+  border: solid black 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.wrapper{
+  display: grid;
+  grid-template-areas:
+    "panel"
+   "content";
+}
+
+@media only screen and (min-width: 1000px){
+  .wrapper{
+    display: grid;
+    grid-gap:0px;
+    grid-template-columns: max-content;
+    grid-template-areas:
+      "panel content";
+
+  }
+}
+.panel{
+  grid-area : panel;
+  width: 200px;
+}
+
+.panel-bottom{
+  width: 200px;
+}
+
+.content{
+  grid-area : content;
+  position: relative;
+  margin-left: 10px;
+
+}
+.parent{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap : 10px;
+}
+.align-div{
+  position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 50%;
+    height: 30%;
+    margin: auto;
+}
+@media only screen and (min-width: 350px) and (max-width: 1000px) {
+  .align-div{
+    position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 30%;
+      margin: auto;
+  }
+  .hide-img{
+    display: none;
+  }
+  .parent{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap : 10px;
+  }
+}
+.align-to-center{
+  text-align: center;
+  margin-bottom: 20px;
+}
+input{
+  width: 100%;
+  line-height: 1.5rem;
+}
+
+.button-style{
+  width: 100%;
+  height: 2rem;
+  background-color: var(--default-color);
+}
+.margin-up{
+  margin-top: 20px;
+}
+.card{
+  width: 200px;
+  height: 200px;
+  border-style: solid;
+  border-width: 0.5px;
+  padding: 20px;
+
+}
+.book-background{
+  background-color: #E6E6FA;
+  text-align: center;
+  height: 60%;
+  position: relative;
+}
+.align-book{
+  position: absolute;
+height: inherit;
+}
+.bookname{
+  font-weight: bold;
+  color: var(--default-color);
+}
+a:hover{
+  color: var(--default-color);
+}

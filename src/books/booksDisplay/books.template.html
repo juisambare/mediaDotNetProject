@@ -1,0 +1,15 @@
+<h4>All Books</h4><br><br>
+
+<span ng-if="books.noMsg">
+  {{books.noMsg}}
+</span>
+<div class="parent">
+<div ng-repeat = "book in books.bookList" class="card">
+  <a href='javascript:;' ng-click = "books.addToFavorite(book);"><img src = "css/assets/favourite.png">Add to favorites </a>
+  <img src = "css/assets/delete.png" ng-click = "books.deleteBook(book,$index);" style="float:right"><br>
+  <div class="book-background"><img src = "css/assets/book dummy.png"></div>
+  <span class = "bookname">{{book.name}}</span><br>
+  by {{book.author}}
+  <span style="float:right"> Price : <i class="fa fa-rupee"> {{book.price}}</i></span>
+</div>
+</div>
